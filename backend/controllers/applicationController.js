@@ -2,6 +2,7 @@ import { catchAsyncError } from "../middleware/catchAsyncError.js";
 import ErrorHandler from "../middleware/error.js";
 import { Application } from "../models/applicationSchema.js";
 import cloudinary from 'cloudinary';
+import {Job} from '../models/jobSchema.js';
 
 export const employerGetAllApplications=catchAsyncError(async(req,res,next)=>{
     const { role } = req.user;
