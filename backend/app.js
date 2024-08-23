@@ -20,15 +20,7 @@ app.use(cors({
     methods :['GET','POST','DELETE','PUT'],
     credentials :true,
 }));
-app.use(
-    session({
-     cookie: {
-            secure: "auto",
-            sameSite:"none",
-            maxAge: 1000 * 60 * 60 * 3,
-        },
-    })
-);
+
 
 
 app.use(cookieParser());
@@ -49,6 +41,15 @@ dbConnection();
 
 app.use(errorMiddleware);
 
+app.use(
+    session({
+     cookie: {
+            secure: "auto",
+            sameSite:"none",
+            maxAge: 1000 * 60 * 60 * 3,
+        },
+    })
+);
 
 
 export default app;
