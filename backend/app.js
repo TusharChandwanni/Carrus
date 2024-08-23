@@ -10,7 +10,7 @@ import jobRouter from './routes/jobRouter.js';
 import { dbConnection } from "./database/dbConnection.js";
 import { errorMiddleware } from "./middleware/error.js";
 import {register} from "./controllers/userController.js";
-import session from "express-session";
+
 
 const app =express();
 dotenv.config({path:'/etc/secrets/config.env'});
@@ -41,15 +41,7 @@ dbConnection();
 
 app.use(errorMiddleware);
 
-app.use(
-    session({
-     cookie: {
-            secure: "auto",
-            sameSite:"none",
-            maxAge: 1000 * 60 * 60 * 3,
-        },
-    })
-);
+
 
 
 export default app;
