@@ -17,8 +17,8 @@ dotenv.config({path:'/etc/secrets/config.env'});
 app.use(
     session({
      cookie: {
-            secure: auto,
-            sameSite:none,
+            secure: "auto",
+            sameSite:"none",
             maxAge: 1000 * 60 * 60 * 3,
         },
     })
