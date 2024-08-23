@@ -8,9 +8,7 @@ import toast from "react-hot-toast";
 import { Context } from "../../main";
 
 const Login = () => {
-   if (!isAuthorized) {
-    return <Navigate to={"/login"} />;
-  }
+   
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
