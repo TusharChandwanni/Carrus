@@ -12,7 +12,7 @@ import { errorMiddleware } from "./middleware/error.js";
 import {register} from "./controllers/userController.js";
 
 const app =express();
-dotenv.config({path:'./config/config.env'});
+dotenv.config({path:'/etc/secrets/config.env'});
 
 app.use(cors({
     origin : [process.env.FRONTEND_URL],
