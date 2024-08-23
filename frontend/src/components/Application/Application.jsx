@@ -38,7 +38,7 @@ const Application = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/application/post",
+        "/api/v1/application/post",{port:4000},
         formData,
         {
           withCredentials: true,

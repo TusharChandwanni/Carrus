@@ -7,7 +7,7 @@ import { Context } from "../../main";
 const PostJob = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("")
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
   const [location, setLocation] = useState("");
@@ -32,7 +32,7 @@ const PostJob = () => {
     }
     await axios
       .post(
-        "http://localhost:4000/api/v1/job/post",
+        "/api/v1/job/post",{port:4000},
         fixedSalary.length >= 4
           ? {
               title,
