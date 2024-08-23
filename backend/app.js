@@ -14,6 +14,13 @@ import {register} from "./controllers/userController.js";
 const app =express();
 dotenv.config({path:'/etc/secrets/config.env'});
 
+app.use(expressSession({
+ // ... other options
+  cookie: {
+    secure: 'auto',
+    sameSite: 'none'
+  }
+}));
 app.use(cors({
     origin : [process.env.FRONTEND_URL],
     methods :['GET','POST','DELETE','PUT'],
