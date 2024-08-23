@@ -10,17 +10,19 @@ import jobRouter from './routes/jobRouter.js';
 import { dbConnection } from "./database/dbConnection.js";
 import { errorMiddleware } from "./middleware/error.js";
 import {register} from "./controllers/userController.js";
+import session from "express-session";
 
 const app =express();
 dotenv.config({path:'/etc/secrets/config.env'});
-
-app.use(expressSession({
- // ... other options
-  cookie: {
-    secure: 'auto',
-    sameSite: 'none'
-  }
-}));
+app.use(
+    session({
+     cookie: {
+            secure: false,
+            httpOnly: true,
+            maxAge: 1000 * 60 * 60 * 3,
+        },
+    })
+);
 app.use(cors({
     origin : [process.env.FRONTEND_URL],
     methods :['GET','POST','DELETE','PUT'],
