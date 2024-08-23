@@ -26,7 +26,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "/api/v1/user/register",{port : 4000},
+          "/api/v1/user/register",
           {
             withCredentials: true,
           }
